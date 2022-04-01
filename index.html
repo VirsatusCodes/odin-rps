@@ -15,13 +15,27 @@
     code you are working on to function like you want it to, 
     fix a typo, or fix a bug. As you gain experience, 
     you will develop a better feel for what should be committed!"-->
-
-    testing vscode commits
 </body>
-
 <script>
 
+let num = Math.random()
+console.log(num)
+
+function computerPlay() {
+    if (num < 0.3) {
+      answer = "rock";
+    }
+    else if (num < 0.6) {
+        answer = "paper";
+    }
+    else {
+         answer = "scissors";
+    }
+    console.log(answer)
+}
 
 
+
+computerPlay()
 </script>
 </html>
