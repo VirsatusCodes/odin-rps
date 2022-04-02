@@ -21,21 +21,53 @@
 let num = Math.random()
 console.log(num)
 
+// if num is less than .3 is rock, between .3 and .6 is paper, and above .6 is scissors, it gets the value from the Math.random function//
 function computerPlay() {
     if (num < 0.3) {
-      answer = "rock";
+      computerAnswer = "rock";
     }
     else if (num < 0.6) {
-        answer = "paper";
+        computerAnswer = "paper";
     }
     else {
-         answer = "scissors";
+        computerAnswer = "scissors";
     }
-    console.log(answer)
+    console.log(computerAnswer)
+}
+computerPlay()
+//prompts player for their choice of rock paper or scissors, in string form, and converts everything into lower case//
+function getPlayerAnswer() {
+  answer =  prompt("rock, paper, or scissors");
+  playerAnswer = answer.toLowerCase();
+}
+getPlayerAnswer()
+// displays the result of your choice vs the computers choice, aka who wins! in 1 game//
+function game() {
+    if (playerAnswer === computerAnswer) {
+        alert("tie!")
+    }
+    else if (playerAnswer==="paper" && computerAnswer==="rock") {
+      alert("You Win! Paper beats Rock")
+    }
+    else if (playerAnswer==="rock" && computerAnswer==="scissors") {
+      alert("You Win! Rock beats Scissors")
+    }
+    else if (playerAnswer==="scissors" && computerAnswer==="paper") {
+      alert("You Win! Scissors beats Paper")
+    }
+    else if (computerAnswer==="paper" && playerAnswer==="rock") {
+      alert("You Lose! Paper beats Rock")
+    }
+    else if (computerAnswer==="rock" && playerAnswer==="scissors") {
+      alert("You Lose! Rock beats Scissors")
+    }
+    else if (computerAnswer==="scissors" && playerAnswer==="paper") {
+      alert("You Lose! Scissors beats Paper")
+    }
 }
 
+game()
 
 
-computerPlay()
 </script>
 </html>
