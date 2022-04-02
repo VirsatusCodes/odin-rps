@@ -17,56 +17,64 @@
     you will develop a better feel for what should be committed!"-->
 </body>
 <script>
-
-let num = Math.random()
-console.log(num)
-
+"use strict";
+let num = Math.random();
+console.log(num);
+//have to create the variable with a temporary value before calling and changing them to make sure it works in strict mode//
+let computerSelection = "empty"
+let answer = "also empty"
+let playerSelection = "truly empty"
 // if num is less than .3 is rock, between .3 and .6 is paper, and above .6 is scissors, it gets the value from the Math.random function//
 function computerPlay() {
     if (num < 0.3) {
-      computerAnswer = "rock";
+      computerSelection = "rock";
     }
     else if (num < 0.6) {
-        computerAnswer = "paper";
+        computerSelection = "paper";
     }
     else {
-        computerAnswer = "scissors";
+        computerSelection = "scissors";
     }
-    console.log(computerAnswer)
+    console.log(computerSelection)
 }
 computerPlay()
-//prompts player for their choice of rock paper or scissors, in string form, and converts everything into lower case//
+//prompts player for their choice of rock paper or scissors, in string form, and converts everything into lower case, should they cancel it lashes out in a fit of rage : (//
 function getPlayerAnswer() {
   answer =  prompt("rock, paper, or scissors");
-  playerAnswer = answer.toLowerCase();
-}
-getPlayerAnswer()
-// displays the result of your choice vs the computers choice, aka who wins! in 1 game//
-function game() {
-    if (playerAnswer === computerAnswer) {
-        alert("tie!")
-    }
-    else if (playerAnswer==="paper" && computerAnswer==="rock") {
-      alert("You Win! Paper beats Rock")
-    }
-    else if (playerAnswer==="rock" && computerAnswer==="scissors") {
-      alert("You Win! Rock beats Scissors")
-    }
-    else if (playerAnswer==="scissors" && computerAnswer==="paper") {
-      alert("You Win! Scissors beats Paper")
-    }
-    else if (computerAnswer==="paper" && playerAnswer==="rock") {
-      alert("You Lose! Paper beats Rock")
-    }
-    else if (computerAnswer==="rock" && playerAnswer==="scissors") {
-      alert("You Lose! Rock beats Scissors")
-    }
-    else if (computerAnswer==="scissors" && playerAnswer==="paper") {
-      alert("You Lose! Scissors beats Paper")
-    }
+  if (answer === null) {
+    alert ("Stop wasting my time.")
+  }
+  else playerSelection = answer.toLowerCase(); 
 }
 
-game()
+getPlayerAnswer()
+// displays the result of your choice vs the computers choice, aka who wins! in 1 playRound//
+function playRound() {
+    if (playerSelection === computerSelection) {
+        alert("tie!")
+    }
+    else if (playerSelection==="paper" && computerSelection==="rock") {
+      alert("You Win! Paper beats Rock")
+    }
+    else if (playerSelection==="rock" && computerSelection==="scissors") {
+      alert("You Win! Rock beats Scissors")
+    }
+    else if (playerSelection==="scissors" && computerSelection==="paper") {
+      alert("You Win! Scissors beats Paper")
+    }
+    else if (computerSelection==="paper" && playerSelection==="rock") {
+      alert("You Lose! Paper beats Rock")
+    }
+    else if (computerSelection==="rock" && playerSelection==="scissors") {
+      alert("You Lose! Rock beats Scissors")
+    }
+    else if (computerSelection==="scissors" && playerSelection==="paper") {
+      alert("You Lose! Scissors beats Paper")
+    }
+    else alert("Do you think this is some sort of joke???")
+}
+
+playRound()
 
 
 </script>
