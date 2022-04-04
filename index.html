@@ -21,6 +21,7 @@
 let num = 14
 let playerSelection = "rock";
 let computerSelection = "tart";
+let k = 0
 function computerPlay(num) {
   num = Math.random();
   if (num < 0.3 )  return "rock";
@@ -44,8 +45,17 @@ function playRound(playerSelection, computerSelection) {
 //console.log it acts the same as a call and lets me see the answer.
 function game() {
   for (let i = 0; i < 5; i++) {
-    console.log(playRound());
+    if (playRound().includes("Win"))
+    k = k + 1;
+    else k = k - 1;
+    console.log(k);
   }
+  if ( k > 0)
+  alert("youve won this time...");
+  if (k < 0)
+  alert("BWAHHAHA DEATH IT IS");
+  if (k = 0) 
+  alert("a TIE?!?!?");
 }
 game()
 
