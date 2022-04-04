@@ -62,14 +62,14 @@ function playRound() {
     else if (playerSelection==="scissors" && computerSelection==="paper") {
       alert("You Win! Scissors beats Paper")
     }
-    else if (computerSelection==="paper" && playerSelection==="rock") {
-      alert("You Lose! Paper beats Rock")
+    else if (playerSelection==="rock" && computerSelection==="paper") {
+      alert("You Lose! Rock loses to Paper")
     }
-    else if (computerSelection==="rock" && playerSelection==="scissors") {
-      alert("You Lose! Rock beats Scissors")
+    else if (playerSelection==="scissors" && computerSelection==="rock") {
+      alert("You Lose! Scissors lose to Rock")
     }
-    else if (computerSelection==="scissors" && playerSelection==="paper") {
-      alert("You Lose! Scissors beats Paper")
+    else if (playerSelection==="paper" && computerSelection==="scissors") {
+      alert("You Lose! Paper loses to Scissors")
     }
     else alert("Do you think this is some sort of joke???")
 }
