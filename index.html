@@ -20,62 +20,48 @@
 "use strict";
 let num = Math.random();
 console.log(num);
-//have to create the variable with a temporary value before calling and changing them to make sure it works in strict mode//
-let computerSelection = "empty"
+//have to create the variable with a temporary value before calling and changing them to make sure it works in strict mode.//
+// you can make a variable the result of the function as long as you dont use the variable in the function!! also doing so means//
+// you dont have to call it later on in the code for it to run.//
+
+let computerSelection = computerPlay()
 let answer = "also empty"
-let playerSelection = "truly empty"
+let playerSelection = getPlayerAnswer()
+let result = alert(playRound(playerSelection, computerSelection))
+
 // if num is less than .3 is rock, between .3 and .6 is paper, and above .6 is scissors, it gets the value from the Math.random function//
+
 function computerPlay() {
-    if (num < 0.3) {
-      computerSelection = "rock";
-    }
-    else if (num < 0.6) {
-        computerSelection = "paper";
-    }
-    else {
-        computerSelection = "scissors";
-    }
-    console.log(computerSelection)
+    if (num < 0.3) return "rock";
+    if (num < 0.6) return "paper";
+    if (num < 0.99) return "scissors";
+    
 }
-computerPlay()
-//prompts player for their choice of rock paper or scissors, in string form, and converts everything into lower case, should they cancel it lashes out in a fit of rage : (//
+
+console.log(computerSelection)
+
+//prompts player for their choice of rock paper or scissors, in string form, and converts everything into lower case//
+
 function getPlayerAnswer() {
   answer =  prompt("rock, paper, or scissors");
-  if (answer === null) {
+  if (answer === null) 
     alert ("Stop wasting my time.")
-  }
-  else playerSelection = answer.toLowerCase(); 
+  else return answer.toLowerCase(); 
 }
+console.log(playerSelection)
 
-getPlayerAnswer()
-// displays the result of your choice vs the computers choice, aka who wins! in 1 playRound//
-function playRound() {
-    if (playerSelection === computerSelection) {
-        alert("tie!")
-    }
-    else if (playerSelection==="paper" && computerSelection==="rock") {
-      alert("You Win! Paper beats Rock")
-    }
-    else if (playerSelection==="rock" && computerSelection==="scissors") {
-      alert("You Win! Rock beats Scissors")
-    }
-    else if (playerSelection==="scissors" && computerSelection==="paper") {
-      alert("You Win! Scissors beats Paper")
-    }
-    else if (playerSelection==="rock" && computerSelection==="paper") {
-      alert("You Lose! Rock loses to Paper")
-    }
-    else if (playerSelection==="scissors" && computerSelection==="rock") {
-      alert("You Lose! Scissors lose to Rock")
-    }
-    else if (playerSelection==="paper" && computerSelection==="scissors") {
-      alert("You Lose! Paper loses to Scissors")
-    }
-    else alert("Do you think this is some sort of joke???")
+// displays the result of your choice vs the computers choice, aka who wins! in 1 match//
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) return "tie! wow that was a close one... not.";
+    if (playerSelection==="paper" && computerSelection==="rock") return "You Win! Paper beats Rock";
+    if (playerSelection==="rock" && computerSelection==="scissors") return "You Win! Rock beats Scissors";
+    if (playerSelection==="scissors" && computerSelection==="paper") return "You Win! Scissors beats Paper";
+    if (playerSelection==="rock" && computerSelection==="paper") return "You Lose! Rock loses to Paper";
+    if (playerSelection==="scissors" && computerSelection==="rock") return "You Lose! Scissors lose to Rock";
+    if (playerSelection==="paper" && computerSelection==="scissors") return "You Lose! Paper loses to Scissors";
+    else return"Do you think this is some sort of joke???";
 }
-
-playRound()
-
 
 </script>
 </html>
