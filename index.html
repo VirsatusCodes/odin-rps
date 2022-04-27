@@ -5,24 +5,30 @@
 
     <title>Odin Rock Paper Scissors</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <script src="java.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
 
   </head>
 
   <body>
- <div class="instructions">This is a very simple game of rock paper scissors! It a 5 game series and whoever wins more takes the cake, as the kids would say. play by selecting the picture below, either rock, paper, or scissors!</div>
+ <div class="instructions">This is a very simple game of rock paper scissors! It's first to 5 points and whoever wins takes the cake, as the kids would say. play by selecting the picture below, either rock, paper, or scissors!</div>
 <div class="buttons">
-<button> <img src="img/rock.jpg" alt = "rock option" > </button>
+<button id="rock"> <img src="img/rock.jpg" alt = "rock option" > </button>
 
-<button> <img src="img/paper.jpg" alt = "paper option" > </button>
+<button id="paper"> <img src="img/paper.jpg" alt = "paper option" > </button>
 
-<button> <img src="img/scissors.jpg" alt = "scissors option" > </button>
+<button id="scissors"> <img src="img/scissors.jpg" alt = "scissors option" > </button>
 </div>
 
-<div class="score">     </div>
-<div class="final result">      </div>
+<div id="roundContainer"> 
+
+</div>
+
+<div id="outcomeContainer"> 
+
+</div>
+
 <!-- "This means, make a commit if you get a piece of 
     code you are working on to function like you want it to, 
     fix a typo, or fix a bug. As you gain experience, 

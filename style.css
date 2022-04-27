@@ -4,10 +4,16 @@ body {
   }
   .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .instructions {
   display: flex;
   justify-content: center;
   margin: 50px;
   }
+
+ p {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    }
