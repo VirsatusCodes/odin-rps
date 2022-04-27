@@ -5,63 +5,28 @@
 
     <title>Odin Rock Paper Scissors</title>
 
-    <style>
+    <link rel="stylesheet" href="style.css">
 
-    </style>
+    <script src="java.js" defer></script>
+
   </head>
 
   <body>
+ <div class="instructions">This is a very simple game of rock paper scissors! It a 5 game series and whoever wins more takes the cake, as the kids would say. play by selecting the picture below, either rock, paper, or scissors!</div>
+<div class="buttons">
+<button> <img src="img/rock.jpg" alt = "rock option" > </button>
+
+<button> <img src="img/paper.jpg" alt = "paper option" > </button>
+
+<button> <img src="img/scissors.jpg" alt = "scissors option" > </button>
+</div>
+
+<div class="score">     </div>
+<div class="final result">      </div>
 <!-- "This means, make a commit if you get a piece of 
     code you are working on to function like you want it to, 
     fix a typo, or fix a bug. As you gain experience, 
     you will develop a better feel for what should be committed!"-->
 </body>
-<script>
-  // using strict to build good habits
-"use strict";
-let num = 14
-let playerSelection = "rock";
-let computerSelection = "tart";
-let k = 0
 
-//creates a random number and assigns the computers choice based on it
-function computerPlay(num) {
-  num = Math.random();
-  if (num < 0.3 )  return "rock";
-  else if (num < 0.6 )  return "paper";
-  else return "scissors";
-}
-// gives playerSelection and computerSelection a value and assigns an outcome based on that
-function playRound(playerSelection, computerSelection) {
- playerSelection= prompt("rock, paper, or scissors?").toLowerCase() ;
- computerSelection =computerPlay();
-    if (playerSelection === computerSelection) return "tie! wow that was a close one... not.";
-    else if (playerSelection==="paper" && computerSelection==="rock") return "You Win! Paper beats Rock";
-    else if (playerSelection==="rock" && computerSelection==="scissors") return "You Win! Rock beats Scissors";
-    else if (playerSelection==="scissors" && computerSelection==="paper") return "You Win! Scissors beats Paper";
-    else if (playerSelection==="rock" && computerSelection==="paper") return "You Lose! Rock loses to Paper";
-    else if (playerSelection==="scissors" && computerSelection==="rock") return "You Lose! Scissors lose to Rock";
-    else if (playerSelection==="paper" && computerSelection==="scissors") return "You Lose! Paper loses to Scissors";
-    else return"Do you think this is some sort of joke??? Instant loss.";
-}
-
-//console.log it acts the same as a call and lets me see the answer.
-// makes the game play 5 times and then give a response based on if youve won or lost overall.
-function game() {
-  for (let i = 0; i < 5; i++) {
-    if (playRound().includes("Win"))
-    k = k + 1;
-    else k = k - 1;
-    console.log(k);
-  }
-  if ( k > 0)
-  alert("youve won this time...");
-  else if (k < 0)
-  alert("BWAHHAHA DEATH IT IS");
-  else if(k = 0) 
-  alert("a TIE?!?!?");
-}
-game()
-// test
-</script>
 </html>
